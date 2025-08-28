@@ -2144,3 +2144,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+    import sys
+import types
+
+# Patch for Render Python 3.13 missing imghdr
+sys.modules['telegram.files.inputfile'] = types.SimpleNamespace(InputFile=None)
